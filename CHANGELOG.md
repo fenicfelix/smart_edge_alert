@@ -13,3 +13,7 @@
 ## 0.0.4
 
 * Adds titleFontSize and descriptionFontSize properties to the SmartEdgeAlert.show method to allow for content customization.
+
+## 0.0.5
+
+* Performance improvements and minor bug fixes.
