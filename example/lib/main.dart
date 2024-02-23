@@ -45,7 +45,7 @@ class MyHomePage extends StatelessWidget {
                   description: 'Description',
                   gravity: SmartEdgeAlert.top,
                   closeButtonColor: Colors.white,
-                  duration: SmartEdgeAlert.lenghVeryLong,
+                  duration: SmartEdgeAlert.lengthVeryLong,
                 );
               },
               child: const Text('Alert From Top'),
@@ -58,7 +58,7 @@ class MyHomePage extends StatelessWidget {
                     description: 'Description',
                     gravity: SmartEdgeAlert.bottom,
                     closeButtonColor: Colors.white,
-                    duration: SmartEdgeAlert.lenghVeryLong);
+                    duration: SmartEdgeAlert.lengthVeryLong);
               },
               child: const Text('Alert From Bottom'),
             ),
@@ -71,7 +71,7 @@ class MyHomePage extends StatelessWidget {
                     backgroundColor: Colors.green,
                     gravity: SmartEdgeAlert.top,
                     closeButtonColor: Colors.white,
-                    duration: SmartEdgeAlert.lenghVeryLong);
+                    duration: SmartEdgeAlert.lengthVeryLong);
               },
               child: const Text('Colorful Alert'),
             ),
@@ -85,7 +85,7 @@ class MyHomePage extends StatelessWidget {
                     backgroundColor: Colors.red,
                     gravity: SmartEdgeAlert.bottom,
                     closeButtonColor: Colors.white,
-                    duration: SmartEdgeAlert.lenghVeryLong);
+                    duration: SmartEdgeAlert.lengthVeryLong);
               },
               child: const Text('Long Description Alert'),
             ),

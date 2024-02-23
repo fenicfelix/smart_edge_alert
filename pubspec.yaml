@@ -1,6 +1,6 @@
 name: smart_edge_alert
 description: "A Flutter package that shows an interrupted smart alert from top or bottom."
-version: 0.0.3
+version: 0.0.1
 homepage: https://github.com/fenicfelix/smart_edge_alert
 
 environment:

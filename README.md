@@ -2,11 +2,29 @@
 
 A Flutter package that shows an interrupted smart alert from the top or bottom.
 
+## Class Documentation
+
+### SmartEdgeAlert
+A class responsible for showing the smart alert.
+
+
+### OverlayView
+- A class responsible for managing the overlay view.
+
+### OverlayView.OverlayView
+- A factory constructor for creating an instance of the OverlayView class.
+
+### OverlayView.createView
+- A static method for creating and displaying the overlay view.
+
+### OverlayView.dismiss
+- A static method for dismissing and removing the overlay view.
+
 ## How to use Smart Edge Alert
 
 ```yaml
 # add this line to your dependencies
-smart_edge_alert: ^0.0.3
+smart_edge_alert: ^0.0.1
 ```
 
 ```dart
@@ -43,24 +61,6 @@ gravity | SmartEdgeAlert.TOP(Default) or SmartEdgeAlert.BOTTOM
 - smart_edge_alert.OverlayView.OverlayView
 - smart_edge_alert.OverlayView.createView
 - smart_edge_alert.OverlayView.dismiss
-
-## Class Documentation
-
-### SmartEdgeAlert
-A class responsible for showing the smart alert.
-
-
-### OverlayView
-- A class responsible for managing the overlay view.
-
-### OverlayView.OverlayView
-- A factory constructor for creating an instance of the OverlayView class.
-
-### OverlayView.createView
-- A static method for creating and displaying the overlay view.
-
-### OverlayView.dismiss
-- A static method for dismissing and removing the overlay view.
 
 ## Inspiration 
 

@@ -2,14 +2,33 @@ library smart_edge_alert;
 
 import 'package:flutter/material.dart';
 
+/// SmartEdgeAlert class provides functionality to display an interrupted smart alert from the top or bottom of the screen.
 class SmartEdgeAlert {
-  static const int lengthShort = 1; //1 seconds
-  static const int lengthLong = 2; // 2 seconds
-  static const int lenghVeryLong = 3; // 3 seconds
+  /// Duration for short alerts (1 second).
+  static const int lengthShort = 1;
 
+  /// Duration for long alerts (2 seconds).
+  static const int lengthLong = 2;
+
+  /// Duration for very long alerts (3 seconds).
+  static const int lengthVeryLong = 3;
+
+  /// Constant representing the top gravity for displaying alerts.
   static const int top = 1;
+
+  /// Constant representing the bottom gravity for displaying alerts.
   static const int bottom = 2;
 
+  /// Displays a smart alert with the provided parameters.
+  ///
+  /// The [context] parameter is required and represents the BuildContext where the alert will be displayed.
+  /// The [title] parameter is optional and specifies the title of the alert.
+  /// The [description] parameter is optional and specifies the description of the alert.
+  /// The [backgroundColor] parameter is optional and specifies the background color of the alert.
+  /// The [closeButtonColor] parameter is optional and specifies the color of the close button.
+  /// The [icon] parameter is optional and specifies the icon to be displayed in the alert.
+  /// The [duration] parameter is optional and specifies the duration for which the alert will be displayed.
+  /// The [gravity] parameter is optional and specifies the gravity of the alert (top or bottom).
   static void show(
     BuildContext context, {
     String? title,
@@ -20,30 +39,51 @@ class SmartEdgeAlert {
     int? duration,
     int? gravity,
   }) {
-    OverlayView.createView(context,
-        title: title,
-        description: description,
-        duration: duration,
-        gravity: gravity,
-        backgroundColor: backgroundColor,
-        closeButtonColor: closeButtonColor,
-        icon: icon);
+    OverlayView.createView(
+      context,
+      title: title,
+      description: description,
+      duration: duration,
+      gravity: gravity,
+      backgroundColor: backgroundColor,
+      closeButtonColor: closeButtonColor,
+      icon: icon,
+    );
   }
 }
 
+/// OverlayView class manages the creation and dismissal of the overlay alert.
 class OverlayView {
+  /// Singleton instance of the OverlayView class.
   static final OverlayView _singleton = OverlayView._internal();
 
+  /// Internal constructor for creating a singleton instance of the OverlayView class.
   factory OverlayView() {
     return _singleton;
   }
 
+  /// Internal constructor for creating a singleton instance of the OverlayView class.
   OverlayView._internal();
 
+  /// Represents the current overlay state.
   static OverlayState? _overlayState;
+
+  /// Represents the current overlay entry.
   static OverlayEntry? _overlayEntry;
+
+  /// Indicates whether the overlay alert is currently visible.
   static bool _isVisible = false;
 
+  /// Creates and displays the overlay alert with the provided parameters.
+  ///
+  /// The [context] parameter is required and represents the BuildContext where the alert will be displayed.
+  /// The [title] parameter is optional and specifies the title of the alert.
+  /// The [description] parameter is optional and specifies the description of the alert.
+  /// The [duration] parameter is optional and specifies the duration for which the alert will be displayed.
+  /// The [gravity] parameter is optional and specifies the gravity of the alert (top or bottom).
+  /// The [backgroundColor] parameter is optional and specifies the background color of the alert.
+  /// The [icon] parameter is optional and specifies the icon to be displayed in the alert.
+  /// The [closeButtonColor] parameter is optional and specifies the color of the close button.
   static void createView(BuildContext context,
       {String? title,
       String? description,
@@ -73,6 +113,7 @@ class OverlayView {
     }
   }
 
+  /// Dismisses the overlay alert.
   static dismiss() async {
     if (!_isVisible) {
       return;
@@ -83,29 +124,46 @@ class OverlayView {
   }
 }
 
+/// SmartEdgeOverlay class represents the visual appearance of the overlay alert.
 class SmartEdgeOverlay extends StatefulWidget {
+  /// Title of the overlay alert.
+  final String? title;
+
+  /// Description of the overlay alert.
+  final String? description;
+
+  /// Duration for which the overlay alert will be displayed.
+  final int? overlayDuration;
+
+  /// Gravity of the overlay alert (top or bottom).
+  final int? gravity;
+
+  /// Background color of the overlay alert.
+  final Color? backgroundColor;
+
+  /// Color of the close button in the overlay alert.
+  final Color? closeButtonColor;
+
+  /// Icon to be displayed in the overlay alert.
+  final IconData? icon;
+
+  /// Creates a new instance of SmartEdgeOverlay.
   const SmartEdgeOverlay(
-      {super.key,
+      {Key? key,
       this.title,
       this.description,
       this.overlayDuration,
       this.gravity,
       this.backgroundColor,
       this.closeButtonColor,
-      this.icon});
-
-  final String? title;
-  final String? description;
-  final int? overlayDuration;
-  final int? gravity;
-  final Color? backgroundColor;
-  final Color? closeButtonColor;
-  final IconData? icon;
+      this.icon})
+      : super(key: key);
 
   @override
   State<SmartEdgeOverlay> createState() => _SmartEdgeOverlayState();
 }
 
+/// State class for SmartEdgeOverlay widget.
 class _SmartEdgeOverlayState extends State<SmartEdgeOverlay>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
@@ -181,18 +239,28 @@ class _SmartEdgeOverlayState extends State<SmartEdgeOverlay>
   }
 }
 
+/// SmartOverlayWidget class represents the content of the overlay alert.
 class SmartOverlayWidget extends StatelessWidget {
+  /// Title of the overlay alert.
   final String? title;
+
+  /// Description of the overlay alert.
   final String? description;
+
+  /// Icon to be displayed in the overlay alert.
   final IconData? iconData;
+
+  /// Color of the close button in the overlay alert.
   final Color? closeButtonColor;
 
+  /// Creates a new instance of SmartOverlayWidget.
   const SmartOverlayWidget(
-      {super.key,
-      this.title = '',
-      this.description = '',
+      {Key? key,
+      this.title,
+      this.description,
       this.iconData,
-      this.closeButtonColor = Colors.white});
+      this.closeButtonColor = Colors.white})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -241,14 +309,19 @@ class SmartOverlayWidget extends StatelessWidget {
   }
 }
 
+/// SmartAnimatedIcon class represents the animated icon displayed in the overlay alert.
 class SmartAnimatedIcon extends StatefulWidget {
+  /// Icon to be displayed in the overlay alert.
   final IconData? iconData;
-  const SmartAnimatedIcon({super.key, this.iconData});
+
+  /// Creates a new instance of SmartAnimatedIcon.
+  const SmartAnimatedIcon({Key? key, this.iconData}) : super(key: key);
 
   @override
   State<SmartAnimatedIcon> createState() => _SmartAnimatedIconState();
 }
 
+/// State class for SmartAnimatedIcon widget.
 class _SmartAnimatedIconState extends State<SmartAnimatedIcon>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
