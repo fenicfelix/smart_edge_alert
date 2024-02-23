@@ -43,9 +43,9 @@ class MyHomePage extends StatelessWidget {
                   context,
                   title: 'Title',
                   description: 'Description',
-                  gravity: SmartEdgeAlert.TOP,
+                  gravity: SmartEdgeAlert.top,
                   closeButtonColor: Colors.white,
-                  duration: SmartEdgeAlert.LENGTH_VERY_LONG,
+                  duration: SmartEdgeAlert.lenghVeryLong,
                 );
               },
               child: const Text('Alert From Top'),
@@ -56,9 +56,9 @@ class MyHomePage extends StatelessWidget {
                 SmartEdgeAlert.show(context,
                     title: 'Title',
                     description: 'Description',
-                    gravity: SmartEdgeAlert.BOTTOM,
+                    gravity: SmartEdgeAlert.bottom,
                     closeButtonColor: Colors.white,
-                    duration: SmartEdgeAlert.LENGTH_VERY_LONG);
+                    duration: SmartEdgeAlert.lenghVeryLong);
               },
               child: const Text('Alert From Bottom'),
             ),
@@ -69,9 +69,9 @@ class MyHomePage extends StatelessWidget {
                     title: 'SUCCESS',
                     description: 'Description',
                     backgroundColor: Colors.green,
-                    gravity: SmartEdgeAlert.TOP,
+                    gravity: SmartEdgeAlert.top,
                     closeButtonColor: Colors.white,
-                    duration: SmartEdgeAlert.LENGTH_VERY_LONG);
+                    duration: SmartEdgeAlert.lenghVeryLong);
               },
               child: const Text('Colorful Alert'),
             ),
@@ -83,9 +83,9 @@ class MyHomePage extends StatelessWidget {
                     description:
                         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.',
                     backgroundColor: Colors.red,
-                    gravity: SmartEdgeAlert.BOTTOM,
+                    gravity: SmartEdgeAlert.bottom,
                     closeButtonColor: Colors.white,
-                    duration: SmartEdgeAlert.LENGTH_VERY_LONG);
+                    duration: SmartEdgeAlert.lenghVeryLong);
               },
               child: const Text('Long Description Alert'),
             ),

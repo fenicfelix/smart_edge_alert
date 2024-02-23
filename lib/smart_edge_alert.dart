@@ -3,12 +3,12 @@ library smart_edge_alert;
 import 'package:flutter/material.dart';
 
 class SmartEdgeAlert {
-  static const int LENGTH_SHORT = 1; //1 seconds
-  static const int LENGTH_LONG = 2; // 2 seconds
-  static const int LENGTH_VERY_LONG = 3; // 3 seconds
+  static const int lengthShort = 1; //1 seconds
+  static const int lengthLong = 2; // 2 seconds
+  static const int lenghVeryLong = 3; // 3 seconds
 
-  static const int TOP = 1;
-  static const int BOTTOM = 2;
+  static const int top = 1;
+  static const int bottom = 2;
 
   static void show(
     BuildContext context, {
@@ -21,7 +21,7 @@ class SmartEdgeAlert {
     int? gravity,
   }) {
     OverlayView.createView(context,
-        title: title ?? '',
+        title: title,
         description: description,
         duration: duration,
         gravity: gravity,
@@ -45,7 +45,7 @@ class OverlayView {
   static bool _isVisible = false;
 
   static void createView(BuildContext context,
-      {required String title,
+      {String? title,
       String? description,
       int? duration,
       int? gravity,
@@ -61,8 +61,8 @@ class OverlayView {
         return SmartEdgeOverlay(
           title: title,
           description: description ?? '',
-          overlayDuration: duration ?? SmartEdgeAlert.LENGTH_SHORT,
-          gravity: gravity ?? SmartEdgeAlert.TOP,
+          overlayDuration: duration ?? SmartEdgeAlert.lengthShort,
+          gravity: gravity ?? SmartEdgeAlert.top,
           backgroundColor: backgroundColor ?? Colors.grey,
           icon: icon ?? Icons.notifications,
           closeButtonColor: closeButtonColor ?? Colors.white,
@@ -182,8 +182,8 @@ class _SmartEdgeOverlayState extends State<SmartEdgeOverlay>
 }
 
 class SmartOverlayWidget extends StatelessWidget {
-  final String title;
-  final String description;
+  final String? title;
+  final String? description;
   final IconData? iconData;
   final Color? closeButtonColor;
 
@@ -211,7 +211,7 @@ class SmartOverlayWidget extends StatelessWidget {
                   : Padding(
                       padding: const EdgeInsets.only(bottom: 10),
                       child: Text(
-                        title,
+                        title ?? '',
                         style: const TextStyle(
                             color: Colors.white,
                             fontSize: 20,
@@ -221,7 +221,7 @@ class SmartOverlayWidget extends StatelessWidget {
               description == null
                   ? Container()
                   : Text(
-                      description,
+                      description ?? '',
                       style: const TextStyle(color: Colors.white, fontSize: 14),
                     )
             ],
