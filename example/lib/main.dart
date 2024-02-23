@@ -68,6 +68,7 @@ class MyHomePage extends StatelessWidget {
                 SmartEdgeAlert.show(context,
                     title: 'SUCCESS',
                     description: 'Description',
+                    icon: Icons.check,
                     backgroundColor: Colors.green,
                     gravity: SmartEdgeAlert.top,
                     closeButtonColor: Colors.white,
@@ -83,6 +84,7 @@ class MyHomePage extends StatelessWidget {
                     description:
                         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.',
                     backgroundColor: Colors.red,
+                    icon: Icons.error,
                     gravity: SmartEdgeAlert.bottom,
                     closeButtonColor: Colors.white,
                     duration: SmartEdgeAlert.lengthVeryLong);
@@ -101,6 +103,7 @@ class MyHomePage extends StatelessWidget {
                     backgroundColor: Colors.orange,
                     gravity: SmartEdgeAlert.bottom,
                     closeButtonColor: Colors.white,
+                    icon: Icons.warning,
                     duration: SmartEdgeAlert.lengthVeryLong);
               },
               child: const Text('Custom Font Size Alert'),
