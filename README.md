@@ -38,9 +38,9 @@ SmartEdgeAlert.show(
   titleFontSize: 20,
   description: 'Description',
   descriptionFontSize: 16,
-  gravity: SmartEdgeAlert.TOP,
+  gravity: SmartEdgeAlert.top,
   closeButtonColor: Colors.white,
-  duration: SmartEdgeAlert.LENGTH_VERY_LONG,
+  duration: SmartEdgeAlert.lengthVeryLong,
 );
 ```
 
