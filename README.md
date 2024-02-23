@@ -36,6 +36,32 @@ backgroundColor | Color() (Default Colors.grey)
 duration| SmartEdgeAlert.LENGTH_SHORT (1 second, Default) or SmartEdgeAlert.LENGTH_LONG (2 sec) or SmartEdgeAlert.LENGTH_VERY_LONG (3 sec)
 gravity | SmartEdgeAlert.TOP(Default) or SmartEdgeAlert.BOTTOM
 
+## Classes
+
+- smart_edge_alert
+- smart_edge_alert.OverlayView
+- smart_edge_alert.OverlayView.OverlayView
+- smart_edge_alert.OverlayView.createView
+- smart_edge_alert.OverlayView.dismiss
+
+## Class Documentation
+
+### SmartEdgeAlert
+A class responsible for showing the smart alert.
+
+
+### OverlayView
+- A class responsible for managing the overlay view.
+
+### OverlayView.OverlayView
+- A factory constructor for creating an instance of the OverlayView class.
+
+### OverlayView.createView
+- A static method for creating and displaying the overlay view.
+
+### OverlayView.dismiss
+- A static method for dismissing and removing the overlay view.
+
 ## Inspiration 
 
 [https://github.com/mohamed6996/EdgeAlert](https://github.com/mohamed6996/EdgeAlert)
