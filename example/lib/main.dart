@@ -39,14 +39,16 @@ class MyHomePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Navigate to the second screen using a named route.
-                SmartEdgeAlert.show(context,
-                    title: 'Title',
-                    description: 'Description',
-                    gravity: SmartEdgeAlert.TOP,
-                    closeButtonColor: Colors.white,
-                    duration: SmartEdgeAlert.LENGTH_VERY_LONG);
+                SmartEdgeAlert.show(
+                  context,
+                  title: 'Title',
+                  description: 'Description',
+                  gravity: SmartEdgeAlert.TOP,
+                  closeButtonColor: Colors.white,
+                  duration: SmartEdgeAlert.LENGTH_VERY_LONG,
+                );
               },
-              child: const Text('Show Alert From Top'),
+              child: const Text('Alert From Top'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -58,7 +60,7 @@ class MyHomePage extends StatelessWidget {
                     closeButtonColor: Colors.white,
                     duration: SmartEdgeAlert.LENGTH_VERY_LONG);
               },
-              child: const Text('Show Alert From Bottom'),
+              child: const Text('Alert From Bottom'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -71,7 +73,7 @@ class MyHomePage extends StatelessWidget {
                     closeButtonColor: Colors.white,
                     duration: SmartEdgeAlert.LENGTH_VERY_LONG);
               },
-              child: const Text('Show Colorful Alert From Top'),
+              child: const Text('Colorful Alert'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -85,7 +87,7 @@ class MyHomePage extends StatelessWidget {
                     closeButtonColor: Colors.white,
                     duration: SmartEdgeAlert.LENGTH_VERY_LONG);
               },
-              child: const Text('Show Long Text Colorful Alert From Bottom'),
+              child: const Text('Long Description Alert'),
             ),
           ],
         ),
