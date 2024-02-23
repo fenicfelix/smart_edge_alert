@@ -32,7 +32,9 @@ class SmartEdgeAlert {
   static void show(
     BuildContext context, {
     String? title,
+    double? titleFontSize,
     String? description,
+    double? descriptionFontSize,
     Color? backgroundColor,
     Color? closeButtonColor,
     IconData? icon,
@@ -42,7 +44,9 @@ class SmartEdgeAlert {
     OverlayView.createView(
       context,
       title: title,
+      titleFontSize: titleFontSize,
       description: description,
+      descriptionFontSize: descriptionFontSize,
       duration: duration,
       gravity: gravity,
       backgroundColor: backgroundColor,
@@ -86,7 +90,9 @@ class OverlayView {
   /// The [closeButtonColor] parameter is optional and specifies the color of the close button.
   static void createView(BuildContext context,
       {String? title,
+      double? titleFontSize,
       String? description,
+      double? descriptionFontSize,
       int? duration,
       int? gravity,
       Color? backgroundColor,
@@ -100,9 +106,11 @@ class OverlayView {
       _overlayEntry = OverlayEntry(builder: (context) {
         return SmartEdgeOverlay(
           title: title,
-          description: description ?? '',
-          overlayDuration: duration ?? SmartEdgeAlert.lengthShort,
-          gravity: gravity ?? SmartEdgeAlert.top,
+          titleFontSize: titleFontSize,
+          description: description,
+          descriptionFontSize: descriptionFontSize,
+          overlayDuration: duration,
+          gravity: gravity,
           backgroundColor: backgroundColor ?? Colors.grey,
           icon: icon ?? Icons.notifications,
           closeButtonColor: closeButtonColor ?? Colors.white,
@@ -129,8 +137,14 @@ class SmartEdgeOverlay extends StatefulWidget {
   /// Title of the overlay alert.
   final String? title;
 
+  /// Font size of the title in the overlay alert.
+  final double? titleFontSize;
+
   /// Description of the overlay alert.
   final String? description;
+
+  /// Font size of the description in the overlay alert.
+  final double? descriptionFontSize;
 
   /// Duration for which the overlay alert will be displayed.
   final int? overlayDuration;
@@ -151,7 +165,9 @@ class SmartEdgeOverlay extends StatefulWidget {
   const SmartEdgeOverlay(
       {Key? key,
       this.title,
+      this.titleFontSize,
       this.description,
+      this.descriptionFontSize,
       this.overlayDuration,
       this.gravity,
       this.backgroundColor,
@@ -230,7 +246,9 @@ class _SmartEdgeOverlayState extends State<SmartEdgeOverlay>
           color: widget.backgroundColor,
           child: SmartOverlayWidget(
               title: widget.title ?? '',
+              titleFontSize: widget.titleFontSize ?? 20,
               description: widget.description ?? '',
+              descriptionFontSize: widget.descriptionFontSize ?? 14,
               iconData: widget.icon ?? Icons.notifications,
               closeButtonColor: widget.closeButtonColor ?? Colors.white),
         ),
@@ -244,8 +262,14 @@ class SmartOverlayWidget extends StatelessWidget {
   /// Title of the overlay alert.
   final String? title;
 
+  /// Font size of the title in the overlay alert.
+  final double? titleFontSize;
+
   /// Description of the overlay alert.
   final String? description;
+
+  /// Font size of the description in the overlay alert.
+  final double? descriptionFontSize;
 
   /// Icon to be displayed in the overlay alert.
   final IconData? iconData;
@@ -257,7 +281,9 @@ class SmartOverlayWidget extends StatelessWidget {
   const SmartOverlayWidget(
       {Key? key,
       this.title,
+      this.titleFontSize = 20,
       this.description,
+      this.descriptionFontSize = 14,
       this.iconData,
       this.closeButtonColor = Colors.white})
       : super(key: key);
@@ -280,9 +306,9 @@ class SmartOverlayWidget extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 10),
                       child: Text(
                         title ?? '',
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: titleFontSize,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -290,7 +316,10 @@ class SmartOverlayWidget extends StatelessWidget {
                   ? Container()
                   : Text(
                       description ?? '',
-                      style: const TextStyle(color: Colors.white, fontSize: 14),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: descriptionFontSize,
+                      ),
                     )
             ],
           )),

@@ -24,7 +24,7 @@ A class responsible for showing the smart alert.
 
 ```yaml
 # add this line to your dependencies
-smart_edge_alert: ^0.0.1
+smart_edge_alert: ^0.0.4
 ```
 
 ```dart
@@ -35,7 +35,9 @@ import 'package:smart_edge_alert/smart_edge_alert.dart';
 SmartEdgeAlert.show(
   context,
   title: 'Title',
+  titleFontSize: 20,
   description: 'Description',
+  descriptionFontSize: 16,
   gravity: SmartEdgeAlert.TOP,
   closeButtonColor: Colors.white,
   duration: SmartEdgeAlert.LENGTH_VERY_LONG,
@@ -48,7 +50,9 @@ Property | Description
 --------|------------
 context | BuildContext (Not Null)(required)
 title   | 'Your title goes here'
+titleFontSize   | 'Your title font size goes here'
 description   | 'Your description goes here'
+descriptionFontSize   | 'Your description font size goes here'
 icon    | IconData (Default: Icons.notifications)
 backgroundColor | Color() (Default Colors.grey)
 duration| SmartEdgeAlert.LENGTH_SHORT (1 second, Default) or SmartEdgeAlert.LENGTH_LONG (2 sec) or SmartEdgeAlert.LENGTH_VERY_LONG (3 sec)

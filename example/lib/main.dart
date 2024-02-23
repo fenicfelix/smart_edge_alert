@@ -89,6 +89,22 @@ class MyHomePage extends StatelessWidget {
               },
               child: const Text('Long Description Alert'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to the second screen using a named route.
+                SmartEdgeAlert.show(context,
+                    title: 'Title',
+                    titleFontSize: 30,
+                    description:
+                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.',
+                    descriptionFontSize: 20,
+                    backgroundColor: Colors.orange,
+                    gravity: SmartEdgeAlert.bottom,
+                    closeButtonColor: Colors.white,
+                    duration: SmartEdgeAlert.lengthVeryLong);
+              },
+              child: const Text('Custom Font Size Alert'),
+            ),
           ],
         ),
       ),
