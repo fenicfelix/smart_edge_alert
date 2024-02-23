@@ -38,7 +38,7 @@ gravity | SmartEdgeAlert.TOP(Default) or SmartEdgeAlert.BOTTOM
 
 ## Inspiration 
 
-[https://github.com/Tapadoo/Alerter/](https://github.com/mohamed6996/EdgeAlert)https://github.com/mohamed6996/EdgeAlert
+[https://github.com/mohamed6996/EdgeAlert](https://github.com/mohamed6996/EdgeAlert)
 
 ## License
 
