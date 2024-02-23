@@ -48,7 +48,7 @@ SmartEdgeAlert.show(
 
 Property | Description
 --------|------------
-context | BuildContext (Not Null)(required)
+context | BuildContext (Not Null) (required)
 title   | 'Your title goes here'
 titleFontSize   | 'Your title font size goes here'
 description   | 'Your description goes here'
