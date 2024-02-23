@@ -1,6 +1,6 @@
 # Smart Edge Alert
 
-A Flutter package that shows an interrupted smart alert from the top or bottom.
+A Flutter package that shows an interrupted smart alert from the top or bottom. The package shows how to use different icons, background colors, font size and duration of the alert.
 
 ## Class Documentation
 
