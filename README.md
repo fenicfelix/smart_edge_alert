@@ -6,7 +6,7 @@ A Flutter package that shows an interrupted smart alert from the top or bottom.
 
 ```yaml
 # add this line to your dependencies
-smart_edge_alert: ^0.0.1
+smart_edge_alert: ^0.0.3
 ```
 
 ```dart
