@@ -44,6 +44,8 @@ SmartEdgeAlert.show(
 );
 ```
 
+![SmartEdgeAlert](https://github.com/fenicfelix/smart_edge_alert/blob/dev/screenshots/GIF.gif)
+
 ## Properties description
 
 Property | Description
