@@ -21,3 +21,7 @@
 ## 0.0.6
 
 * Adds example video to README.md.
+
+## 0.0.7
+
+* Updates README.md file with properties description table.
