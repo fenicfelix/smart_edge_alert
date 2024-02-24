@@ -17,3 +17,7 @@
 ## 0.0.5
 
 * Performance improvements and minor bug fixes.
+
+## 0.0.6
+
+* Adds example video to README.md.
