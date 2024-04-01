@@ -25,3 +25,7 @@
 ## 0.0.7
 
 * Updates README.md file with properties description table.
+
+## 0.0.8
+
+* Adds default gravity to stop the alert from appearing as a full-screen overlay.
