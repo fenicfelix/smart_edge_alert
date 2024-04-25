@@ -34,3 +34,7 @@
 
 * Adds Visibility to title and description properties to allow for conditional rendering.
 * Updates the display duration of the alert to 3 seconds by default to 1, 3 and 5 for lengthShort, lengthLong and lenthVeryLong respectively.
+
+## 0.1.0
+
+* Updates README.md with a detailed description of how to use the Smart Edge Alert.

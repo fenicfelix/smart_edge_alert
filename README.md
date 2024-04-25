@@ -24,7 +24,7 @@ A class responsible for showing the smart alert.
 
 ```yaml
 # add this line to your dependencies
-smart_edge_alert: ^0.0.7
+smart_edge_alert: ^0.1.0
 ```
 
 ```dart
