@@ -29,3 +29,8 @@
 ## 0.0.8
 
 * Adds default gravity to stop the alert from appearing as a full-screen overlay.
+
+## 0.0.9
+
+* Adds Visibility to title and description properties to allow for conditional rendering.
+* Updates the display duration of the alert to 3 seconds by default to 1, 3 and 5 for lengthShort, lengthLong and lenthVeryLong respectively.

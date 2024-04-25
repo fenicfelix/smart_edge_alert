@@ -108,6 +108,23 @@ class MyHomePage extends StatelessWidget {
               },
               child: const Text('Custom Font Size Alert'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to the second screen using a named route.
+                SmartEdgeAlert.show(
+                  context,
+                  description:
+                      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                  descriptionFontSize: 20,
+                  backgroundColor: Colors.orange,
+                  gravity: SmartEdgeAlert.bottom,
+                  closeButtonColor: Colors.white,
+                  icon: Icons.warning,
+                  duration: SmartEdgeAlert.lengthVeryLong,
+                );
+              },
+              child: const Text('Description Only Alert'),
+            ),
           ],
         ),
       ),

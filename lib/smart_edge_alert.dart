@@ -7,11 +7,11 @@ class SmartEdgeAlert {
   /// Duration for short alerts (1 second).
   static const int lengthShort = 1;
 
-  /// Duration for long alerts (2 seconds).
-  static const int lengthLong = 2;
+  /// Duration for long alerts (3 seconds).
+  static const int lengthLong = 3;
 
-  /// Duration for very long alerts (3 seconds).
-  static const int lengthVeryLong = 3;
+  /// Duration for very long alerts (5 seconds).
+  static const int lengthVeryLong = 5;
 
   /// Constant representing the top gravity for displaying alerts.
   static const int top = 1;
@@ -300,27 +300,26 @@ class SmartOverlayWidget extends StatelessWidget {
               child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              title == null
-                  ? Container()
-                  : Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: Text(
-                        title ?? '',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: titleFontSize,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-              description == null
-                  ? Container()
-                  : Text(
-                      description ?? '',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: descriptionFontSize,
-                      ),
-                    )
+              Visibility(
+                visible: title != null,
+                child: Text(
+                  title ?? '',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: titleFontSize,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Visibility(
+                visible: description != null,
+                child: Text(
+                  description ?? '',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: descriptionFontSize,
+                  ),
+                ),
+              )
             ],
           )),
           GestureDetector(
