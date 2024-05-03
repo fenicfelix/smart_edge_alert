@@ -213,7 +213,7 @@ class _SmartEdgeOverlayState extends State<SmartEdgeOverlay>
     _controller.addStatusListener((listener) async {
       if (listener == AnimationStatus.completed) {
         await Future.delayed(Duration(seconds: widget.overlayDuration ?? 1));
-        _controller.reverse();
+        // _controller.reverse();
         await Future.delayed(const Duration(milliseconds: 700));
         OverlayView.dismiss();
       }

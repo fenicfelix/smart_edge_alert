@@ -38,3 +38,7 @@
 ## 0.1.0
 
 * Updates README.md with a detailed description of how to use the Smart Edge Alert.
+
+## 0.1.1
+
+* Fixes bug on closing the smart edge alert
